@@ -27,12 +27,12 @@ public class CollectionTestSuite {
     @Test
     public void testOddNumbersExterminatorEmptyList() {
         //Given
-        ArrayList<Integer> EmptyList = new ArrayList<Integer>();
+        ArrayList<Integer> emptyList = new ArrayList<Integer>();
         //When
-        ArrayList<Integer> EmptyListExpectations = new ArrayList<Integer>();
-        OddNumbersExterminator.exterminate(EmptyList);
+        ArrayList<Integer> emptyListExpectations = new ArrayList<Integer>();
+        OddNumbersExterminator.exterminate(emptyList);
         //Then
-        Assert.assertEquals(EmptyListExpectations, EmptyList);
+        Assert.assertEquals(emptyListExpectations, emptyList);
     }
 
     @Test

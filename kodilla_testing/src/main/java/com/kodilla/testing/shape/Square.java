@@ -1,19 +1,29 @@
 package com.kodilla.testing.shape;
 
-public abstract class ShapeSquare implements Shape {
+public class Square implements Shape {
     private String shape;
+    private Double field;
 
-    public ShapeSquare(String shape) {
+    public Square(String shape, Double field) {
         this.shape = shape;
+        this.field = field;
     }
 
+    @Override
+    public String toString() {
+        return "Square{" +
+                "shape='" + shape + '\'' +
+                ", field=" + field +
+                '}';
+    }
+
+    @Override
     public String getShapeName() {
-        return null;
+        return shape;
     }
 
-
-    public Double getField(Double a) {
-        Double result = a * a;
-        return result;
+    @Override
+    public Double getField() {
+        return field;
     }
 }

@@ -1,2 +1,4 @@
 include 'kodilla_testing'
+include 'kodilla_stream'
+include 'kodilla_exception'
 

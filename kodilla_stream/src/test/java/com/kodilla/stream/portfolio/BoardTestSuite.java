@@ -84,6 +84,7 @@ public class BoardTestSuite {
         //Then
         Assert.assertEquals(3, project.getTaskLists().size());
     }
+
     @Test
     public void testAddTaskListFindUsersTasks() {
         //Given
@@ -99,6 +100,7 @@ public class BoardTestSuite {
         Assert.assertEquals(user, tasks.get(0).getAssignedUser());
         Assert.assertEquals(user, tasks.get(1).getAssignedUser());
     }
+
     @Test
     public void testAddTaskListFindOutdatedTasks() {
         //Given
@@ -118,6 +120,7 @@ public class BoardTestSuite {
         Assert.assertEquals(1, tasks.size());
         Assert.assertEquals("HQLs for analysis", tasks.get(0).getTitle());
     }
+
     @Test
     public void testAddTaskListFindLongTasks() {
         //Given
@@ -136,8 +139,9 @@ public class BoardTestSuite {
         //Then
         Assert.assertEquals(2, longTasks);
     }
+
     @Test
-    public void shouldGetAverageOfDaysFromStartTasksInProgressToNow(){
+    public void shouldGetAverage() {
         //Given
         Board project = prepareTestData();
         //When
@@ -146,15 +150,11 @@ public class BoardTestSuite {
         Double average = project.getTaskLists().stream()
                 .filter(startedTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .mapToLong(t -> t.getCreated().until(LocalDate.now(),ChronoUnit.DAYS))
+                .mapToDouble(t -> t.getCreated().until(LocalDate.now(), ChronoUnit.DAYS))
                 .average().getAsDouble();
 
 
-        Assert.assertEquals(10.0, average,0);
-
-
-
-
+        Assert.assertEquals(10.0, average, 0);
 
 
     }

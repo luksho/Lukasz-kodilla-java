@@ -26,8 +26,9 @@ public class StatisticCalculationsTestSuite {
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter);
     }
+
     @After
-    public  void afterEveryTest(){
+    public void afterEveryTest() {
         System.out.println("Test end");
     }
 

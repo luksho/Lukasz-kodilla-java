@@ -18,6 +18,10 @@ public class SearchFacade {
     @Autowired
     EmployeeDao employeeDao;
 
+    public int softwareMachineId;
+    public int dataMaestersId;
+    public int greyMatterId;
+
     public static final Logger LOGGER = LoggerFactory.getLogger(SearchFacade.class);
 
 
@@ -57,11 +61,11 @@ public class SearchFacade {
         lindaKovalsky.getCompanies().add(greyMatter);
 
         companyDao.save(softwareMachine);
-        int softwareMachineId = softwareMachine.getId();
+        softwareMachineId = softwareMachine.getId();
         companyDao.save(dataMaesters);
-        int dataMaestersId = dataMaesters.getId();
+        dataMaestersId = dataMaesters.getId();
         companyDao.save(greyMatter);
-        int greyMatterId = greyMatter.getId();
+        greyMatterId = greyMatter.getId();
     }
 
     public List<Company> findCompany(String word) throws SearchingExeption {
